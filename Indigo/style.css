@@ -8,6 +8,10 @@ body,html {
     background-position: center;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 
 #indLogo {
     width: 100px;
@@ -187,7 +191,7 @@ input[type="radio"]:hover {
     cursor: pointer;
 }
 
-label[for="Trip"] {
+.radioBtn{
     margin-right: 20px;
     font-family: "Poppins";
     font-size: 14px;
@@ -199,7 +203,7 @@ label[for="Trip"] {
     margin-top: 10px;
     font-size: 16px;
     font-family: "Poppins";
-    color: #757c8a;
+    color: #0003a1;
     font-weight: normal;
 }
 
@@ -252,8 +256,6 @@ label[for="Trip"] {
 
 .currency-picker {
     display: inline;
-    /* padding: 6px 12px 6px 12px; */
-    
     font-size: 16px;
     font-family: "Poppins";
     border: 1px solid #daf1ff;
@@ -367,7 +369,7 @@ label[for="Trip"] {
     top: -20px;
     left: -15px;
     font-family: Poppins;
-    color: #7a85a0;
+    color: #034abd;
     font-weight: 400;
 }
 
@@ -385,10 +387,6 @@ label[for="Trip"] {
     padding-left: 10px;
 }
 
-/* .formFields:focus {
-    outline: none;
-    border: none;
-} */
 
 #travelOpt {
     border: none;
@@ -402,10 +400,6 @@ label[for="Trip"] {
     cursor: pointer;
 }
 
-/* #travelOpt:focus {
-    border: none;
-    outline: none;
-} */
 
 input[type="date"] {
     font-family: Poppins;
@@ -423,15 +417,6 @@ input[type="date"] {
     padding: 3px 12px 6px 12px;
     border-radius: 10px;
 }
-
-/* #curencyOpt:hover {
-    cursor: pointer;
-}
-
-#currencyOpt:focus {
-    border: none;
-    outline: none;
-} */
 
 
 .error-popup {
@@ -469,7 +454,7 @@ input[type="date"] {
   /* Accordion buttons */
   .accordion button {
     width: 100%;
-    background-color: #007bff;
+    background-color: #000000;
     color: white;
     border: none;
     padding: 10px;
@@ -559,8 +544,3 @@ input[type="date"] {
     outline: 2px solid #000;
   }
   
-  /* Focus ring for accessibility */
-  /* :focus {
-    outline: 2px dashed #209326;
-  } */
-
