@@ -1,0 +1,281 @@
+<!-- Indio website-->
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IndiGo</title>
+    <!--Style Sheet -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--Font style sheet-->
+
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div id="webPageContent">
+      <header>
+        <div class="navbar">
+          <a href="#" id="logo"
+            ><img src="./images/logo.png" alt="Logo" id="indLogo"
+          /></a>
+          <div class="header-links">
+            <a href="">Book <i class="fa-solid fa-angle-down"></i></a>
+            <a href="">Trips <i class="fa-solid fa-angle-down"></i></a>
+            <a href="">Check-in</a>
+            <a href="">6E Rewards</a>
+          </div>
+          <div class="btn-wrapper">
+            <button class="login-button">Login</button>
+            <span class="dropdown-icon"
+              ><i class="fa-solid fa-angle-down"></i
+            ></span>
+          </div>
+        </div>
+      </header>
+      <a
+        id="offers"
+        href="#mainContent"
+        class="just-link"
+        style="text-align: center"
+        >Skip to main content <i class="fa-solid fa-angle-down"></i
+      ></a>
+
+      <h1 id="tagline">
+        Hi there, where would you like to
+        <span style="color: #209326">IndiGo</span> today?
+      </h1>
+      <div id="errorPopup" class="error-popup">
+        <p id="errorMessage"></p>
+      </div>
+
+      <section id="travel-form">
+        <div class="form-wrapper">
+          <div class="flight-hotel-form">
+            <div class="book-top-buttons">
+              <button id="bookFlight">
+                <img
+                  src="./images/flight.png"
+                  alt="flight logo"
+                  id="Flight"
+                />Book a flight
+              </button>
+
+              <!--Focus Management POC-->
+              <button
+                id="bookHotel"
+                onclick="window.location.href='hotel.html';"
+              >
+                <img src="./images/hotel.png" alt="hotel logo" id="Hotel" />Book
+                a hotel
+              </button>
+            </div>
+
+            <form id="bookingForm">
+              <div class="top-form" id="mainContent">
+                <span class="trip-radio-grp">
+                  <input type="radio" name="Trip" id="oneWay" checked />
+                  <label for="Trip">One Way</label>
+                  <input type="radio" name="Trip" id="roundTrip" checked />
+                  <label for="Trip">Round Trip</label>
+                  <input type="radio" name="Trip" id="multiCity" />
+                  <label for="Trip">Multi City</label>
+                </span>
+                <!-- Drop Down POC-->
+                <div class="currency-picker" role="listbox">
+                  <select
+                    name="currencyOptions"
+                    id="currencyOpt"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                    role="menu"
+                  >
+                    <option value="Inr">₹ INR</option>
+                    <option value="Usd">$ USD</option>
+                    <option value="Euro">€ EUR</option>
+                    <option value="Pounds">£ GBP</option>
+                    <option value="Yen">¥ YEN</option>
+                  </select>
+                </div>
+              </div>
+              <div class="grid-container">
+                <div class="grid-item item1">
+                  <span class="label-top">From</span>
+                  <input
+                    type="text"
+                    name="from"
+                    placeholder="Eg: Delhi"
+                    class="formFields"
+                  />
+                </div>
+                <div class="grid-item item2">
+                  <span class="label-top">To</span>
+                  <input
+                    type="text"
+                    name="to"
+                    placeholder="Eg: Mumbai"
+                    class="formFields"
+                  />
+                </div>
+                <div class="grid-item">
+                  <span class="label-top">Departure</span>
+                  <input type="date" name="deptarture" class="formFields" />
+                </div>
+                <div class="grid-item">
+                  <span class="label-top">Return</span>
+                  <input type="date" name="return" class="formFields" />
+                </div>
+                <div class="grid-item item5">
+                  <span class="label-top">No. of passengers</span>
+                  <input
+                    type="number"
+                    name="passengerNo"
+                    class="formFields"
+                    placeholder="Eg: 3"
+                    min="1"
+                  />
+                </div>
+              </div>
+              <div class="im-travelling-for">
+                I am travelling for
+                <div class="travel-blank-wrapper">
+                  <div class="travel-blank">
+                    <select name="travelOptions" id="travelOpt">
+                      <option value="Leisure">Leisure</option>
+                      <option value="Work">Work</option>
+                      <option value="Medical">Medical</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <!-- Promo search-->
+              <div class="promoSearch">
+                <div class="promo-search-wrapper">
+                  <button id="promoCode">+ <u>ADD PROMOCODE</u></button>
+                  <button id="searchFlight" type="button">Search</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- New Offer tagline -->
+      <section id="new-offer">
+        <h2 id="whatNew">What's new?</h2>
+        <p id="offers">
+          Find <span style="color: #209326">exclusive offers</span> and the best
+          deals available for you.
+        </p>
+      </section>
+    </div>
+
+    <!-- Modal Implementation-->
+    <div
+      id="modal"
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-labelledby="modalHeading"
+      aria-modal="true"
+    >
+      <div class="modal-content" role="document">
+        <button id="closeModal" aria-label="Close modal" class="close-btn">
+          &times;
+        </button>
+        <h1 id="modalHeading">Booking Confirmation</h1>
+        <p>Are you sure to confirm this booking!!.</p>
+        <button id="confirmButton">Confirm</button>
+      </div>
+    </div>
+    <h2 id="offers">Flight Information</h2>
+
+    <!--Accordian Implementation-->
+    <div class="accordion-container">
+      <div class="accordion">
+        <!-- First Accordion Item -->
+        <h3>
+          <button
+            aria-expanded="false"
+            aria-controls="section1"
+            id="accordion1"
+          >
+            Flight Status
+          </button>
+        </h3>
+        <div
+          id="section1"
+          role="region"
+          aria-labelledby="accordion1"
+          class="accordion-content"
+        >
+          <p>
+            You can check the real-time status of your flight by entering your
+            flight number or destination in the 'Flight Status' section on our
+            website. We'll also notify you via email or SMS if there are any
+            changes to your flight schedule.
+          </p>
+        </div>
+
+        <!-- Second Accordion Item -->
+        <h3>
+          <button
+            aria-expanded="false"
+            aria-controls="section2"
+            id="accordion2"
+          >
+            Boarding Information
+          </button>
+        </h3>
+        <div
+          id="section2"
+          role="region"
+          aria-labelledby="accordion2"
+          class="accordion-content"
+        >
+          <p>
+            Boarding begins 45 minutes before departure and closes 15 minutes
+            prior to the scheduled take-off time. Please ensure you arrive at
+            your gate on time to avoid any delays. For international flights, we
+            recommend arriving at least 3 hours before departure.
+          </p>
+        </div>
+
+        <!-- Third Accordion Item -->
+        <h3>
+          <button
+            aria-expanded="false"
+            aria-controls="section3"
+            id="accordion3"
+          >
+            In-Flight Meal Preferences
+          </button>
+        </h3>
+        <div
+          id="section3"
+          role="region"
+          aria-labelledby="accordion3"
+          class="accordion-content"
+        >
+          <p>
+            We offer a variety of meal options on board, including vegetarian,
+            vegan, and gluten-free choices. You can select your preferred meal
+            during the booking process or update it in the 'Manage Booking'
+            section at least 24 hours before your flight.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
