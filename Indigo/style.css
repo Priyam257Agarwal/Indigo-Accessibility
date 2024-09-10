@@ -454,8 +454,8 @@ input[type="date"] {
   /* Accordion buttons */
   .accordion button {
     width: 100%;
-    background-color: #000000;
-    color: white;
+    background-color: grey;
+    color: black;
     border: none;
     padding: 10px;
     text-align: left;
