@@ -1,6 +1,6 @@
 <!-- Indio website-->
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,11 +24,12 @@
   </head>
 
   <body>
+    <main role="main">
     <div id="webPageContent">
       <header>
         <div class="navbar">
           <a href="#" id="logo"
-            ><img src="./images/logo.png" alt="Logo" id="indLogo"
+            ><img src="./images/logo.png" alt="indigoLogo" id="indLogo"
           /></a>
           <div class="header-links">
             <a href="">Book <i class="fa-solid fa-angle-down"></i></a>
@@ -48,7 +49,7 @@
         id="offers"
         href="#mainContent"
         class="just-link"
-        style="text-align: center"
+        style="text-align: right"
         >Skip to main content <i class="fa-solid fa-angle-down"></i
       ></a>
 
@@ -86,20 +87,21 @@
               <div class="top-form" id="mainContent">
                 <span class="trip-radio-grp">
                   <input type="radio" name="Trip" id="oneWay" checked />
-                  <label for="Trip">One Way</label>
+                  <label for="oneWay" class="radioBtn">One Way</label>
                   <input type="radio" name="Trip" id="roundTrip" checked />
-                  <label for="Trip">Round Trip</label>
+                  <label for="roundTrip" class="radioBtn">Round Trip</label>
                   <input type="radio" name="Trip" id="multiCity" />
-                  <label for="Trip">Multi City</label>
+                  <label for="multiCity" class="radioBtn">Multi City</label>
                 </span>
                 <!-- Drop Down POC-->
-                <div class="currency-picker" role="listbox">
+                <div
+                  class="currency-picker"
+                  aria-label="currency"
+                >
                   <select
                     name="currencyOptions"
                     id="currencyOpt"
-                    aria-haspopup="listbox"
-                    aria-expanded="false"
-                    role="menu"
+                    aria-label="currency"
                   >
                     <option value="Inr">₹ INR</option>
                     <option value="Usd">$ USD</option>
@@ -117,6 +119,7 @@
                     name="from"
                     placeholder="Eg: Delhi"
                     class="formFields"
+                    aria-label="from"
                   />
                 </div>
                 <div class="grid-item item2">
@@ -126,15 +129,16 @@
                     name="to"
                     placeholder="Eg: Mumbai"
                     class="formFields"
+                    aria-label="to"
                   />
                 </div>
                 <div class="grid-item">
                   <span class="label-top">Departure</span>
-                  <input type="date" name="deptarture" class="formFields" />
+                  <input type="date" name="deptarture" class="formFields" aria-label="deptarture" />
                 </div>
                 <div class="grid-item">
                   <span class="label-top">Return</span>
-                  <input type="date" name="return" class="formFields" />
+                  <input type="date" name="return" class="formFields" aria-label="return" />
                 </div>
                 <div class="grid-item item5">
                   <span class="label-top">No. of passengers</span>
@@ -144,6 +148,7 @@
                     class="formFields"
                     placeholder="Eg: 3"
                     min="1"
+                    aria-label="passengerNo"
                   />
                 </div>
               </div>
@@ -151,7 +156,7 @@
                 I am travelling for
                 <div class="travel-blank-wrapper">
                   <div class="travel-blank">
-                    <select name="travelOptions" id="travelOpt">
+                    <select name="travelOptions" id="travelOpt" aria-label="travelOpt>
                       <option value="Leisure">Leisure</option>
                       <option value="Work">Work</option>
                       <option value="Medical">Medical</option>
@@ -277,5 +282,6 @@
         </div>
       </div>
     </div>
+    </main>
   </body>
 </html>
