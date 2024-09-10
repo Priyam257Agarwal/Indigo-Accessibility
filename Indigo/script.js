@@ -103,4 +103,21 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Ticket Booking has been made successfully!"); // Show alert after closing the modal
         bookingForm.submit(); // Submit form
     });
+
+    //Accordian Code
+    const accordionButtons = document.querySelectorAll('.accordion button');
+
+    accordionButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', !expanded);
+
+        const content = document.getElementById(button.getAttribute('aria-controls'));
+        if (!expanded) {
+          content.style.display = 'block';
+        } else {
+          content.style.display = 'none';
+        }
+      });
+    });    
 });
