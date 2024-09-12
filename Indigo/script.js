@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById('modal');
     const closeModalBtn = document.getElementById('closeModal');
     const confirmButton = document.getElementById('confirmButton');
+    const promoCodeLink = document.getElementById('promoCode');
     let lastFocusedElement = null;
 
+    // Search button logic (now without modal)
     searchButton.addEventListener('click', (e) => {
         e.preventDefault();
 
@@ -41,8 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             });
         } else {
-            openModal(); // Open modal only after successful validation
+            // Handle form submission or any other logic without modal
+            alert('Form submitted successfully.');
         }
+    });
+
+    // Add Promo Code button logic - Open modal
+    promoCodeLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal(); // Open modal when "Add Promo Code" is clicked
     });
 
     // Function to open modal and trap focus inside modal
@@ -50,17 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
         lastFocusedElement = document.activeElement; // Save last focused element
         modal.setAttribute('aria-hidden', 'false');
         modal.style.display = 'flex';
-        document.body.classList.add('modal-open'); // Add class to disable background scroll
+        document.body.classList.add('modal-open'); // Disable background scroll
         closeModalBtn.focus(); // Focus the close button in the modal
 
-        document.addEventListener('keydown', trapFocus);
+        document.addEventListener('keydown', trapFocus); // Enable focus trapping
     }
 
     // Function to close modal and restore focus
     function closeModal() {
         modal.setAttribute('aria-hidden', 'true');
         modal.style.display = 'none';
-        document.body.classList.remove('modal-open'); // Remove class to restore background scroll
+        document.body.classList.remove('modal-open'); // Restore background scroll
         lastFocusedElement.focus(); // Return focus to the element that opened the modal
 
         document.removeEventListener('keydown', trapFocus);
@@ -85,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         } else if (event.key === 'Escape') {
-            closeModal();
+            closeModal(); // Close modal on Escape key
         }
     }
 
@@ -97,11 +106,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Confirm button click event - Form submission and alert after modal confirmation
-    confirmButton.addEventListener('click', () => {
-        closeModal(); // Close modal first
-        alert("Ticket Booking has been made successfully!"); // Show alert after closing the modal
-        bookingForm.submit(); // Submit form
+    // Confirm button click event for promo code application
+    // confirmButton.addEventListener('click', () => {
+    //    // alert("Promo code applied successfully!");
+    //     closeModal();
+    // });
+
+    confirmButton.addEventListener("click", function () {
+        const promoCodeValue = promoCodeInput.value.trim();
+        if (promoCodeValue) {
+            promoCodeLink.innerHTML = `<u>${promoCodeValue}</u>`; // Replace the text with the promo code
+        }
+        closeModal(); // Close the modal after submit
     });
 
     //Accordian Code
